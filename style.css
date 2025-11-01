@@ -311,6 +311,20 @@ header {
         0 0 40px var(--shadow-glow);
 }
 
+.card-special .card-number-back {
+    font-size: 8rem;
+    text-shadow: 
+        3px 3px 6px var(--shadow-dark),
+        0 0 20px rgba(139, 38, 53, 0.4),
+        0 0 40px rgba(139, 38, 53, 0.3);
+}
+
+@media (max-width: 767px) {
+    .card-special .card-number-back {
+        font-size: 6rem;
+    }
+}
+
 @media (max-width: 767px) {
     .card-special .card-number {
         font-size: 4rem;
@@ -368,9 +382,9 @@ header {
     background: linear-gradient(135deg, #f5e6d3 0%, #e8d5b7 100%);
     border: 3px solid var(--wood-medium);
     transform: rotateY(180deg);
-    padding: 1rem;
-    text-align: center;
-    color: var(--wood-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Locked Card Styles */
@@ -402,7 +416,7 @@ header {
     opacity: 0.7;
 }
 
-/* Card Number */
+/* Card Number (Front) */
 .card-number {
     font-size: 3rem;
     font-weight: 700;
@@ -413,22 +427,21 @@ header {
     font-family: 'Cormorant Garamond', serif;
 }
 
-/* Card Content */
-.card-content {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: var(--wood-dark);
-}
-
-.card-content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+/* Card Number (Back) */
+.card-number-back {
+    font-size: 5rem;
+    font-weight: 700;
     color: var(--deep-red);
-    font-weight: 600;
+    text-shadow: 
+        2px 2px 4px var(--shadow-dark),
+        0 0 15px rgba(139, 38, 53, 0.3);
+    font-family: 'Cormorant Garamond', serif;
 }
 
-.card-content p {
-    margin-bottom: 0.5rem;
+@media (max-width: 767px) {
+    .card-number-back {
+        font-size: 4rem;
+    }
 }
 
 /* Sparkle Animation */

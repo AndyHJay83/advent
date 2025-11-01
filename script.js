@@ -309,6 +309,11 @@ function showModal(day) {
         // Use saved custom content
         let html = `<h2>${savedContent.title || `Day ${day}`}</h2>`;
         
+        // Add description if it exists
+        if (savedContent.description && (savedContent.type === 'youtube' || savedContent.type === 'pdf')) {
+            html += `<p class="content-description">${savedContent.description}</p>`;
+        }
+        
         if (savedContent.type === 'youtube') {
             html += `
                 <div class="modal-video">
@@ -639,9 +644,11 @@ function loadDayContent() {
         if (savedContent.type === 'youtube') {
             document.querySelector('input[name="contentType"][value="youtube"]').checked = true;
             document.getElementById('youtubeUrl').value = savedContent.url || '';
+            document.getElementById('youtubeDescription').value = savedContent.description || '';
             document.getElementById('youtubeUrl').dispatchEvent(new Event('input'));
         } else if (savedContent.type === 'pdf') {
             document.querySelector('input[name="contentType"][value="pdf"]').checked = true;
+            document.getElementById('pdfDescription').value = savedContent.description || '';
             const preview = document.getElementById('pdfPreview');
             preview.innerHTML = savedContent.fileName ? `
                 <p><strong>File:</strong> ${savedContent.fileName}</p>
@@ -660,7 +667,9 @@ function loadDayContent() {
         document.getElementById('contentTitle').value = '';
         document.getElementById('contentText').value = '';
         document.getElementById('youtubeUrl').value = '';
+        document.getElementById('youtubeDescription').value = '';
         document.getElementById('pdfFile').value = '';
+        document.getElementById('pdfDescription').value = '';
         document.getElementById('youtubePreview').innerHTML = '';
         document.getElementById('pdfPreview').innerHTML = '';
         updateContentEditor();
@@ -707,7 +716,9 @@ function saveDayContent() {
         const videoId = extractYouTubeId(url);
         contentData.url = url;
         contentData.videoId = videoId;
+        contentData.description = document.getElementById('youtubeDescription').value.trim();
     } else if (contentType === 'pdf') {
+        contentData.description = document.getElementById('pdfDescription').value.trim();
         const fileInput = document.getElementById('pdfFile');
         if (fileInput.files.length > 0) {
             const file = fileInput.files[0];
@@ -722,10 +733,12 @@ function saveDayContent() {
             reader.readAsDataURL(file);
             return;
         } else {
-            // Keep existing PDF data if no new file
+            // Keep existing PDF data if no new file, but update description
             const existing = getSavedContent(day);
             if (existing && existing.type === 'pdf') {
-                contentData = existing;
+                contentData.data = existing.data;
+                contentData.fileName = existing.fileName;
+                contentData.size = existing.size;
             }
         }
     }

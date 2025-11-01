@@ -25,9 +25,14 @@
         <header>
             <h1 class="main-title">The Magician's Desk</h1>
             <p class="subtitle">December Mysteries Await</p>
-            <button class="audio-toggle" id="audioToggle" aria-label="Toggle audio">
-                <span class="audio-icon">🔇</span>
-            </button>
+            <div class="header-controls">
+                <button class="settings-toggle" id="settingsToggle" aria-label="Settings" title="Settings">
+                    ⚙️
+                </button>
+                <button class="audio-toggle" id="audioToggle" aria-label="Toggle audio">
+                    <span class="audio-icon">🔇</span>
+                </button>
+            </div>
         </header>
 
         <div class="cards-grid" id="cardsGrid">
@@ -41,6 +46,94 @@
             <button class="modal-close" id="modalClose" onclick="closeModal(); event.stopPropagation(); return false;">&times;</button>
             <div class="modal-body" id="modalBody">
                 <!-- Content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="settings-modal" id="settingsModal">
+        <div class="settings-modal-content">
+            <button class="settings-close" id="settingsClose" onclick="closeSettings(); return false;">&times;</button>
+            
+            <!-- Password Screen -->
+            <div class="settings-password" id="settingsPassword">
+                <h2>Enter Password</h2>
+                <input type="password" id="passwordInput" placeholder="Password" class="password-input">
+                <button onclick="checkPassword()" class="password-submit">Enter</button>
+                <p class="password-error" id="passwordError"></p>
+            </div>
+
+            <!-- Settings Content (hidden until password is correct) -->
+            <div class="settings-content" id="settingsContent" style="display: none;">
+                <h2>⚙️ Content Manager</h2>
+                
+                <div class="settings-tabs">
+                    <button class="tab-button active" onclick="switchTab('day')" data-tab="day">By Day</button>
+                    <button class="tab-button" onclick="switchTab('bulk')" data-tab="bulk">Bulk Import</button>
+                </div>
+
+                <div class="tab-content active" id="tabDay">
+                    <div class="day-selector">
+                        <label for="daySelect">Select Day:</label>
+                        <select id="daySelect" onchange="loadDayContent()">
+                            <option value="">Choose a day...</option>
+                        </select>
+                    </div>
+
+                    <div class="content-editor" id="contentEditor" style="display: none;">
+                        <div class="content-type-selector">
+                            <label>
+                                <input type="radio" name="contentType" value="text" checked onchange="updateContentEditor()">
+                                Text
+                            </label>
+                            <label>
+                                <input type="radio" name="contentType" value="youtube" onchange="updateContentEditor()">
+                                YouTube Video
+                            </label>
+                            <label>
+                                <input type="radio" name="contentType" value="pdf" onchange="updateContentEditor()">
+                                PDF Upload
+                            </label>
+                        </div>
+
+                        <div class="editor-section">
+                            <label>Title:</label>
+                            <input type="text" id="contentTitle" placeholder="Day title..." class="content-input">
+                        </div>
+
+                        <div id="textEditor" class="editor-section">
+                            <label>Content:</label>
+                            <textarea id="contentText" rows="10" placeholder="Enter text content or HTML..." class="content-textarea"></textarea>
+                        </div>
+
+                        <div id="youtubeEditor" class="editor-section" style="display: none;">
+                            <label>YouTube URL or Video ID:</label>
+                            <input type="text" id="youtubeUrl" placeholder="https://www.youtube.com/watch?v=... or video ID" class="content-input">
+                            <div id="youtubePreview" class="youtube-preview"></div>
+                        </div>
+
+                        <div id="pdfEditor" class="editor-section" style="display: none;">
+                            <label>PDF File:</label>
+                            <input type="file" id="pdfFile" accept=".pdf" class="content-input">
+                            <div id="pdfPreview" class="pdf-preview"></div>
+                        </div>
+
+                        <div class="editor-actions">
+                            <button onclick="saveDayContent()" class="save-button">💾 Save</button>
+                            <button onclick="clearDayContent()" class="clear-button">🗑️ Clear</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="tabBulk">
+                    <p>Import/Export all content at once:</p>
+                    <div class="bulk-actions">
+                        <button onclick="exportAllContent()" class="bulk-button">📥 Export All</button>
+                        <button onclick="document.getElementById('bulkImportFile').click()" class="bulk-button">📤 Import</button>
+                        <input type="file" id="bulkImportFile" accept=".json" style="display: none;" onchange="importAllContent(event)">
+                    </div>
+                    <textarea id="bulkExportText" rows="10" placeholder="Export/Import JSON will appear here..." class="bulk-textarea"></textarea>
+                </div>
             </div>
         </div>
     </div>

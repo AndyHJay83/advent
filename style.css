@@ -256,6 +256,38 @@ header {
     }
 }
 
+/* Special card 25 - spans full width */
+.card-special {
+    grid-column: 1 / -1;
+    max-width: 100%;
+}
+
+.card-special .card-front,
+.card-special .card-back {
+    aspect-ratio: 5/1;
+    min-height: 200px;
+}
+
+.card-special .card-number {
+    font-size: 6rem;
+    text-shadow: 
+        3px 3px 6px var(--shadow-dark),
+        0 0 20px var(--shadow-glow),
+        0 0 40px var(--shadow-glow);
+}
+
+@media (max-width: 767px) {
+    .card-special .card-number {
+        font-size: 4rem;
+    }
+    
+    .card-special .card-front,
+    .card-special .card-back {
+        aspect-ratio: 4/1;
+        min-height: 150px;
+    }
+}
+
 /* Card Styles */
 .card {
     aspect-ratio: 3/4;

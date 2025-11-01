@@ -95,6 +95,10 @@ const adventContent = {
     24: {
         title: "Day 24: The Final Mystery",
         content: "<p>Congratulations, seeker. You have journeyed through all the mysteries of The Magician's Desk. The greatest secret of all is this: you were the magic all along. Every card you opened, every mystery you uncovered—it was your curiosity, your wonder, your belief that made it real.</p><blockquote>'The real voyage of discovery consists not in seeking new landscapes, but in having new eyes.'</blockquote><p>May your days be filled with wonder, your nights with dreams, and your heart with the magic that was always yours.</p>"
+    },
+    25: {
+        title: "Christmas Day: The Greatest Gift",
+        content: "<p>🎄 Merry Christmas! 🎄</p><p>On this special day, may the magic you've discovered throughout December fill your heart and home with joy, love, and wonder. The greatest gift is not in the cards you've opened, but in the moments shared, the memories made, and the love that surrounds you.</p><blockquote>'The best gift is a portion of thyself.'</blockquote><p>Thank you for joining The Magician's Desk this December. May your Christmas be magical in every way.</p><p>✨ With love and magic ✨</p>"
     }
 };
 
@@ -106,7 +110,15 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Check if a date is unlocked (current date or past in December)
+// Set to true to unlock all cards for testing
+const UNLOCK_ALL_CARDS = true;
+
 function isDateUnlocked(day) {
+    // Unlock all cards if testing mode is enabled
+    if (UNLOCK_ALL_CARDS) {
+        return true;
+    }
+    
     const today = new Date();
     const currentYear = today.getFullYear();
     const currentMonth = today.getMonth(); // 0-11, where 11 is December
@@ -114,11 +126,13 @@ function isDateUnlocked(day) {
     
     // Only unlock cards in December
     if (currentMonth !== 11) {
+        // Day 25 (Christmas) can also unlock on December 25th
         return false;
     }
     
     // Unlock if the day has arrived or passed
-    return day <= currentDay;
+    // Day 25 unlocks on December 25th
+    return day <= currentDay || (day === 25 && currentDay >= 25);
 }
 
 // Get opened cards from localStorage
@@ -137,9 +151,12 @@ function saveOpenedCard(day) {
 }
 
 // Create a card element
-function createCard(day) {
+function createCard(day, isSpecial = false) {
     const card = document.createElement('div');
     card.className = 'card';
+    if (isSpecial) {
+        card.classList.add('card-special');
+    }
     card.dataset.day = day;
     
     const opened = getOpenedCards();
@@ -165,6 +182,8 @@ function createCard(day) {
         ? getPreviewText(adventContent[day].content).substring(0, 60) + '...'
         : 'A mystery awaits...';
     
+    const cardTitle = day === 25 ? '🎄' : `Day ${day}`;
+    
     card.innerHTML = `
         <div class="card-inner">
             <div class="card-front">
@@ -172,7 +191,7 @@ function createCard(day) {
             </div>
             <div class="card-back">
                 <div class="card-content">
-                    <h3>Day ${day}</h3>
+                    <h3>${cardTitle}</h3>
                     <p>${preview}</p>
                 </div>
             </div>
@@ -248,14 +267,33 @@ function closeModal() {
     document.body.style.overflow = '';
 }
 
+// Shuffle array function (Fisher-Yates algorithm)
+function shuffleArray(array) {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+}
+
 // Initialize the calendar grid
 function initializeCalendar() {
     const grid = document.getElementById('cardsGrid');
     
-    for (let i = 1; i <= 24; i++) {
-        const card = createCard(i);
+    // Create array of days 1-24 and shuffle them
+    const days = Array.from({ length: 24 }, (_, i) => i + 1);
+    const shuffledDays = shuffleArray(days);
+    
+    // Add shuffled cards 1-24
+    shuffledDays.forEach(day => {
+        const card = createCard(day);
         grid.appendChild(card);
-    }
+    });
+    
+    // Add special card 25 at the bottom (will span full width)
+    const card25 = createCard(25, true);
+    grid.appendChild(card25);
 }
 
 // Initialize modal

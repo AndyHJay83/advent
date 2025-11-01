@@ -105,6 +105,28 @@ const adventContent = {
 // Settings password
 const SETTINGS_PASSWORD = 'g4Stuyer';
 
+// Populate day selector - can be called independently
+function populateDaySelector() {
+    const daySelect = document.getElementById('daySelect');
+    if (!daySelect) {
+        console.error('Day selector not found');
+        return;
+    }
+    
+    // Clear existing options except the first one
+    while (daySelect.children.length > 1) {
+        daySelect.removeChild(daySelect.lastChild);
+    }
+    
+    // Populate day selector
+    for (let i = 1; i <= 25; i++) {
+        const option = document.createElement('option');
+        option.value = i;
+        option.textContent = i === 25 ? 'Day 25 (Christmas)' : `Day ${i}`;
+        daySelect.appendChild(option);
+    }
+}
+
 // Open settings (globally accessible) - defined early for inline handlers
 function openSettings() {
     const settingsModal = document.getElementById('settingsModal');
@@ -112,6 +134,9 @@ function openSettings() {
         console.error('Settings modal not found');
         return;
     }
+    
+    // Make sure day selector is populated
+    populateDaySelector();
     
     settingsModal.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -456,17 +481,14 @@ function initializeSettings() {
     }
     
     const settingsClose = document.getElementById('settingsClose');
-    const daySelect = document.getElementById('daySelect');
     
-    // Populate day selector
-    if (daySelect) {
-        for (let i = 1; i <= 25; i++) {
-            const option = document.createElement('option');
-            option.value = i;
-            option.textContent = i === 25 ? 'Day 25 (Christmas)' : `Day ${i}`;
-            daySelect.appendChild(option);
-        }
-    }
+    // Populate day selector immediately
+    populateDaySelector();
+    
+    // Also populate when settings modal opens (in case it wasn't ready before)
+    const populateOnOpen = function() {
+        populateDaySelector();
+    };
     
     // Open settings (backup event listener)
     settingsToggle.addEventListener('click', function(e) {
@@ -476,7 +498,9 @@ function initializeSettings() {
     });
     
     // Close settings
-    settingsClose.addEventListener('click', closeSettings);
+    if (settingsClose) {
+        settingsClose.addEventListener('click', closeSettings);
+    }
     
     // Close on Escape
     document.addEventListener('keydown', function(e) {
@@ -486,11 +510,14 @@ function initializeSettings() {
     });
     
     // Enter key on password input
-    document.getElementById('passwordInput').addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            checkPassword();
-        }
-    });
+    const passwordInput = document.getElementById('passwordInput');
+    if (passwordInput) {
+        passwordInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkPassword();
+            }
+        });
+    }
     
     // PDF file change handler
     document.getElementById('pdfFile').addEventListener('change', function(e) {

@@ -105,6 +105,36 @@ const adventContent = {
 // Settings password
 const SETTINGS_PASSWORD = 'g4Stuyer';
 
+// Open settings (globally accessible) - defined early for inline handlers
+function openSettings() {
+    const settingsModal = document.getElementById('settingsModal');
+    if (!settingsModal) {
+        console.error('Settings modal not found');
+        return;
+    }
+    
+    settingsModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    
+    // Reset password screen
+    const passwordScreen = document.getElementById('settingsPassword');
+    const settingsContent = document.getElementById('settingsContent');
+    if (passwordScreen) passwordScreen.style.display = 'block';
+    if (settingsContent) settingsContent.style.display = 'none';
+    
+    const passwordInput = document.getElementById('passwordInput');
+    if (passwordInput) {
+        passwordInput.value = '';
+        setTimeout(() => passwordInput.focus(), 100);
+    }
+    
+    const passwordError = document.getElementById('passwordError');
+    if (passwordError) passwordError.textContent = '';
+}
+
+// Make openSettings globally accessible immediately
+window.openSettings = openSettings;
+
 // Initialize the calendar
 document.addEventListener('DOMContentLoaded', function() {
     initializeCalendar();
@@ -419,26 +449,30 @@ function initializeAudio() {
 function initializeSettings() {
     const settingsToggle = document.getElementById('settingsToggle');
     const settingsModal = document.getElementById('settingsModal');
+    
+    if (!settingsToggle || !settingsModal) {
+        console.error('Settings elements not found');
+        return;
+    }
+    
     const settingsClose = document.getElementById('settingsClose');
     const daySelect = document.getElementById('daySelect');
     
     // Populate day selector
-    for (let i = 1; i <= 25; i++) {
-        const option = document.createElement('option');
-        option.value = i;
-        option.textContent = i === 25 ? 'Day 25 (Christmas)' : `Day ${i}`;
-        daySelect.appendChild(option);
+    if (daySelect) {
+        for (let i = 1; i <= 25; i++) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.textContent = i === 25 ? 'Day 25 (Christmas)' : `Day ${i}`;
+            daySelect.appendChild(option);
+        }
     }
     
-    // Open settings
-    settingsToggle.addEventListener('click', function() {
-        settingsModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        // Reset password screen
-        document.getElementById('settingsPassword').style.display = 'block';
-        document.getElementById('settingsContent').style.display = 'none';
-        document.getElementById('passwordInput').value = '';
-        document.getElementById('passwordError').textContent = '';
+    // Open settings (backup event listener)
+    settingsToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        openSettings();
     });
     
     // Close settings
@@ -522,8 +556,10 @@ function checkPassword() {
 // Close settings
 function closeSettings() {
     const settingsModal = document.getElementById('settingsModal');
-    settingsModal.classList.remove('active');
-    document.body.style.overflow = '';
+    if (settingsModal) {
+        settingsModal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
 }
 
 window.closeSettings = closeSettings;

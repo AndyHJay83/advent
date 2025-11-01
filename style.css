@@ -253,12 +253,19 @@ header {
     font-size: 1.5rem;
     transition: all 0.3s ease;
     color: var(--gold);
+    z-index: 100;
+    position: relative;
+    pointer-events: auto;
 }
 
 .settings-toggle:hover {
     background: rgba(212, 175, 55, 0.2);
     transform: scale(1.1) rotate(90deg);
     box-shadow: 0 0 15px var(--shadow-glow);
+}
+
+.settings-toggle:active {
+    transform: scale(0.95) rotate(90deg);
 }
 
 /* Cards Grid */

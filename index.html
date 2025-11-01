@@ -36,9 +36,9 @@
     </div>
 
     <!-- Modal for card reveals -->
-    <div class="modal" id="modal">
-        <div class="modal-content">
-            <button class="modal-close" id="modalClose">&times;</button>
+    <div class="modal" id="modal" onclick="if(event.target===this) closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" id="modalClose" onclick="closeModal(); event.stopPropagation(); return false;">&times;</button>
             <div class="modal-body" id="modalBody">
                 <!-- Content will be inserted here -->
             </div>

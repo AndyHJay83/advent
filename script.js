@@ -260,12 +260,18 @@ function showModal(day) {
     document.body.style.overflow = 'hidden';
 }
 
-// Close modal
+// Close modal - make it globally accessible
 function closeModal() {
     const modal = document.getElementById('modal');
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        document.body.style.height = '';
+    }
 }
+
+// Make closeModal globally accessible
+window.closeModal = closeModal;
 
 // Shuffle array function (Fisher-Yates algorithm)
 function shuffleArray(array) {
@@ -300,33 +306,36 @@ function initializeCalendar() {
 function initializeModal() {
     const modal = document.getElementById('modal');
     const modalClose = document.getElementById('modalClose');
+    const modalContent = document.querySelector('.modal-content');
     
-    // Close button - prevent event bubbling
-    modalClose.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        closeModal();
-    });
+    // Close button - use capture phase to ensure it fires first
+    if (modalClose) {
+        modalClose.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+            closeModal();
+            return false;
+        }, true); // Use capture phase
+    }
     
     // Close on background click (but not on modal-content clicks)
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            closeModal();
-        }
-    });
-    
-    // Prevent modal-content clicks from closing the modal
-    const modalContent = document.querySelector('.modal-content');
-    if (modalContent) {
-        modalContent.addEventListener('click', function(e) {
-            e.stopPropagation();
+    if (modal) {
+        modal.addEventListener('click', function(e) {
+            // Only close if clicking directly on the modal background, not on modal-content
+            if (e.target === modal && !modalContent.contains(e.target)) {
+                closeModal();
+            }
         });
     }
     
-    // Close on Escape key
+    // Close on Escape key - attach to document
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.classList.contains('active')) {
-            closeModal();
+        if (e.key === 'Escape' || e.keyCode === 27) {
+            if (modal && modal.classList.contains('active')) {
+                e.preventDefault();
+                closeModal();
+            }
         }
     });
 }

@@ -301,15 +301,27 @@ function initializeModal() {
     const modal = document.getElementById('modal');
     const modalClose = document.getElementById('modalClose');
     
-    // Close button
-    modalClose.addEventListener('click', closeModal);
+    // Close button - prevent event bubbling
+    modalClose.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        closeModal();
+    });
     
-    // Close on background click
+    // Close on background click (but not on modal-content clicks)
     modal.addEventListener('click', function(e) {
         if (e.target === modal) {
             closeModal();
         }
     });
+    
+    // Prevent modal-content clicks from closing the modal
+    const modalContent = document.querySelector('.modal-content');
+    if (modalContent) {
+        modalContent.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
     
     // Close on Escape key
     document.addEventListener('keydown', function(e) {

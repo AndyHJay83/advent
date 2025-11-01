@@ -1,0 +1,8 @@
+# Assets Folder
+
+Place optional assets here:
+- `fireplace.mp3` - Background audio file (optional)
+- Other images or resources as needed
+
+The audio toggle will automatically hide if the audio file doesn't exist.
+

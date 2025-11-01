@@ -237,22 +237,13 @@ function createCard(day, isSpecial = false) {
         return temp.textContent || temp.innerText || '';
     };
     
-    const preview = adventContent[day] 
-        ? getPreviewText(adventContent[day].content).substring(0, 60) + '...'
-        : 'A mystery awaits...';
-    
-    const cardTitle = day === 25 ? '🎄' : `Day ${day}`;
-    
     card.innerHTML = `
         <div class="card-inner">
             <div class="card-front">
                 <div class="card-number">${day}</div>
             </div>
             <div class="card-back">
-                <div class="card-content">
-                    <h3>${cardTitle}</h3>
-                    <p>${preview}</p>
-                </div>
+                <div class="card-number-back">${day}</div>
             </div>
         </div>
     `;

@@ -211,7 +211,7 @@ function updateCountdown() {
     const timeRemaining = unlockTime - now.getTime();
 
     if (timeRemaining <= 0) {
-        countdownText.textContent = '00:00:00';
+        countdownText.textContent = 'Next door unlocks in 00:00:00';
         countdownProgress.style.width = '100%';
         return;
     }
@@ -222,7 +222,7 @@ function updateCountdown() {
     const progress = Math.max(0, Math.min(1, 1 - timeRemaining / interval));
     countdownProgress.style.width = `${progress * 100}%`;
 
-    countdownText.textContent = formatTimeFromMilliseconds(timeRemaining);
+    countdownText.textContent = `Next door unlocks in ${formatTimeFromMilliseconds(timeRemaining)}`;
 }
 
 function refreshCardLockStates() {
@@ -278,9 +278,7 @@ function createCard(day) {
             <div class="card-front">
                 <div class="card-number">${day}</div>
             </div>
-            <div class="card-back">
-                <div class="card-number-back">${day}</div>
-            </div>
+            <div class="card-back"></div>
         </div>
     `;
 

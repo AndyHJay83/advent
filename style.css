@@ -143,21 +143,14 @@ body {
     transform: rotateY(180deg);
     color: #ffffff;
     border-color: rgba(255, 255, 255, 0.12);
-}
-
-.card-number,
-.card-number-back {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    letter-spacing: 0.05em;
+    font-size: clamp(3rem, 6vw, 4.8rem);
 }
 
 .card-number {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: 0.05em;
     font-size: clamp(2.5rem, 5vw, 3.5rem);
-}
-
-.card-number-back {
-    font-size: clamp(3.2rem, 6vw, 4.4rem);
 }
 
 .card.locked .card-inner {

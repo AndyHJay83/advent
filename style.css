@@ -14,6 +14,19 @@
     --modal-shadow: 0 24px 72px rgba(17, 17, 17, 0.2);
 }
 
+/* Logo Banner */
+.logo-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.logo-banner img {
+    max-width: clamp(140px, 30vw, 240px);
+    height: auto;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;

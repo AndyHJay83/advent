@@ -282,7 +282,9 @@ function createCard(day) {
             <div class="card-front">
                 <div class="card-number">${day}</div>
             </div>
-            <div class="card-back"></div>
+            <div class="card-back">
+                <div class="card-back-text">OPEN NOW</div>
+            </div>
         </div>
     `;
 

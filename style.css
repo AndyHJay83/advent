@@ -23,7 +23,7 @@
 }
 
 .logo-banner img {
-    max-width: clamp(140px, 30vw, 240px);
+    max-width: clamp(280px, 60vw, 480px);
     height: auto;
 }
 

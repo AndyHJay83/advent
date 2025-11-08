@@ -108,6 +108,7 @@ const FORCE_UNLOCK_DAYS = new Set([1]);
 
 const countdownContainer = document.getElementById('countdownContainer');
 const countdownText = document.getElementById('countdownText');
+const countdownClock = document.getElementById('countdownClock');
 const countdownProgress = document.getElementById('countdownProgress');
 const footerMessage = document.getElementById('footerMessage');
 
@@ -202,7 +203,8 @@ function updateCountdown() {
     const nextUnlock = getNextUnlockDay();
 
     if (!nextUnlock) {
-        countdownText.textContent = '00:00:00';
+        countdownText.textContent = 'Next door unlocks in';
+        countdownClock.textContent = '00:00:00';
         countdownProgress.style.width = '100%';
         return;
     }
@@ -210,8 +212,10 @@ function updateCountdown() {
     const { day, unlockTime } = nextUnlock;
     const timeRemaining = unlockTime - now.getTime();
 
+    countdownText.textContent = 'Next door unlocks in';
+
     if (timeRemaining <= 0) {
-        countdownText.textContent = 'Next door unlocks in 00:00:00';
+        countdownClock.textContent = '00:00:00';
         countdownProgress.style.width = '100%';
         return;
     }
@@ -222,7 +226,7 @@ function updateCountdown() {
     const progress = Math.max(0, Math.min(1, 1 - timeRemaining / interval));
     countdownProgress.style.width = `${progress * 100}%`;
 
-    countdownText.textContent = `Next door unlocks in ${formatTimeFromMilliseconds(timeRemaining)}`;
+    countdownClock.textContent = formatTimeFromMilliseconds(timeRemaining);
 }
 
 function refreshCardLockStates() {

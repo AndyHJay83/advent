@@ -1,8 +1,8 @@
 // Advent calendar content for each day
 const adventContent = {
     1: {
-        title: "Day 1: The Journey Begins",
-        content: "<p>Welcome to The Magician's Desk. Each day reveals a new mystery, a new secret, a new wonder.</p><blockquote>'The real magic is believing in yourself.'</blockquote>"
+        title: "Day 1: Preview Door",
+        content: "<p>🎁 This is a placeholder reveal so you can preview the animation and modal content. Replace this with your real Day 1 surprise!</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis turpis vel turpis dignissim varius.</p>"
     },
     2: {
         title: "Day 2: Ancient Wisdom",
@@ -104,6 +104,7 @@ const adventContent = {
 
 const TOTAL_DAYS = 25;
 const OPENED_STORAGE_KEY = 'magiciansDeskOpened_v2';
+const FORCE_UNLOCK_DAYS = new Set([1]);
 
 const countdownContainer = document.getElementById('countdownContainer');
 const countdownText = document.getElementById('countdownText');
@@ -143,6 +144,9 @@ function hasOpenedDay(day) {
 }
 
 function isDateUnlocked(day) {
+    if (FORCE_UNLOCK_DAYS.has(day)) {
+        return true;
+    }
     const now = new Date();
     const year = now.getUTCFullYear();
     const currentMonth = now.getUTCMonth();
@@ -164,6 +168,9 @@ function getNextUnlockDay() {
     const year = now.getUTCFullYear();
 
     for (let day = 1; day <= TOTAL_DAYS; day++) {
+        if (FORCE_UNLOCK_DAYS.has(day)) {
+            continue;
+        }
         const unlockTime = Date.UTC(year, 11, day, 0, 0, 0);
         if (now.getTime() < unlockTime) {
             return { day, unlockTime };

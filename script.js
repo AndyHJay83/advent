@@ -123,6 +123,7 @@ function formatTimeFromMilliseconds(ms) {
 // Initialise calendar on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
     initializeCalendar();
+    refreshCardLockStates();
     initializeModal();
     initializeCountdown();
 });
@@ -232,6 +233,8 @@ function refreshCardLockStates() {
 
         if (unlocked) {
             card.classList.remove('locked');
+        } else {
+            card.classList.add('locked');
         }
     });
 }
@@ -266,6 +269,8 @@ function createCard(day) {
 
     if (!unlocked) {
         card.classList.add('locked');
+    } else {
+        card.classList.remove('locked');
     }
 
     card.innerHTML = `

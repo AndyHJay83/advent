@@ -43,13 +43,12 @@ body {
 .header {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.25rem;
 }
 
 .header-text {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
 }
 
 .main-title {
@@ -57,11 +56,6 @@ body {
     font-size: clamp(2.4rem, 4vw, 3.2rem);
     letter-spacing: 0.08em;
     text-transform: uppercase;
-}
-
-.subtitle {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
 }
 
 .countdown {
@@ -77,6 +71,8 @@ body {
 #countdownText {
     font-weight: 600;
     color: var(--text-primary);
+    font-size: 1.25rem;
+    letter-spacing: 0.08em;
 }
 
 .countdown-progress {

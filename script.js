@@ -110,6 +110,15 @@ const countdownText = document.getElementById('countdownText');
 const countdownProgress = document.getElementById('countdownProgress');
 const footerMessage = document.getElementById('footerMessage');
 
+function formatTimeFromMilliseconds(ms) {
+    const clamped = Math.max(0, ms);
+    const totalSeconds = Math.floor(clamped / 1000);
+    const hours = Math.floor(totalSeconds / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+    return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+}
+
 // Initialise calendar on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
     initializeCalendar();
@@ -174,17 +183,18 @@ function updateCountdown() {
     const openedCards = getOpenedCards();
 
     if (openedCards.includes(25)) {
-        // Day 25 already opened – celebrate and stop countdown
         countdownContainer.style.display = 'none';
         footerMessage.textContent = 'Merry Christmas, from the Mag!';
         return;
     }
 
+    countdownContainer.style.display = 'flex';
+
     const now = new Date();
     const currentMonth = now.getUTCMonth();
 
     if (currentMonth < 11) {
-        countdownText.textContent = 'Doors awaken on 1 December (GMT).';
+        countdownText.textContent = '00:00:00';
         countdownProgress.style.width = '0%';
         return;
     }
@@ -192,7 +202,7 @@ function updateCountdown() {
     const nextUnlock = getNextUnlockDay();
 
     if (!nextUnlock) {
-        countdownText.textContent = 'All doors are unlocked. Discover them at your pace.';
+        countdownText.textContent = '00:00:00';
         countdownProgress.style.width = '100%';
         return;
     }
@@ -201,20 +211,16 @@ function updateCountdown() {
     const timeRemaining = unlockTime - now.getTime();
 
     if (timeRemaining <= 0) {
-        countdownText.textContent = `Day ${day} unlocks now.`;
+        countdownText.textContent = '00:00:00';
         countdownProgress.style.width = '100%';
         return;
     }
 
-    const totalInterval = 24 * 60 * 60 * 1000; // 24 hours in ms
+    const totalInterval = 24 * 60 * 60 * 1000;
     const progress = Math.max(0, Math.min(1, 1 - timeRemaining / totalInterval));
     countdownProgress.style.width = `${progress * 100}%`;
 
-    const hours = Math.floor(timeRemaining / (1000 * 60 * 60));
-    const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-
-    countdownText.textContent = `Next door opens (GMT) in ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}.`;
+    countdownText.textContent = formatTimeFromMilliseconds(timeRemaining);
 }
 
 function refreshCardLockStates() {

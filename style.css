@@ -1,7 +1,7 @@
 /* Root Variables */
 :root {
     --bg: #f5f5f7;
-    --card-front: #c8102e;
+    --card-front: #c40000;
     --card-back: #111111;
     --card-border: #f9f9f9;
     --text-primary: #111111;
@@ -179,8 +179,8 @@ body {
 .card.locked .card-front::after {
     content: '\1F512';
     position: absolute;
-    font-size: clamp(1.8rem, 5vw, 2.4rem);
-    color: rgba(255, 255, 255, 0.85);
+    font-size: clamp(2.4rem, 6vw, 3.2rem);
+    color: rgba(255, 255, 255, 0.425);
     transform: translateY(0.2rem);
 }
 

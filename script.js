@@ -191,14 +191,6 @@ function updateCountdown() {
     countdownContainer.style.display = 'flex';
 
     const now = new Date();
-    const currentMonth = now.getUTCMonth();
-
-    if (currentMonth < 11) {
-        countdownText.textContent = '00:00:00';
-        countdownProgress.style.width = '0%';
-        return;
-    }
-
     const nextUnlock = getNextUnlockDay();
 
     if (!nextUnlock) {
@@ -216,8 +208,10 @@ function updateCountdown() {
         return;
     }
 
-    const totalInterval = 24 * 60 * 60 * 1000;
-    const progress = Math.max(0, Math.min(1, 1 - timeRemaining / totalInterval));
+    const year = now.getUTCFullYear();
+    const previousUnlockTime = Date.UTC(year, 11, day - 1, 0, 0, 0);
+    const interval = Math.max(1, unlockTime - previousUnlockTime);
+    const progress = Math.max(0, Math.min(1, 1 - timeRemaining / interval));
     countdownProgress.style.width = `${progress * 100}%`;
 
     countdownText.textContent = formatTimeFromMilliseconds(timeRemaining);

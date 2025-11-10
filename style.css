@@ -169,6 +169,7 @@ body {
     font-weight: 700;
     letter-spacing: 0.05em;
     font-size: clamp(2.5rem, 5vw, 3.5rem);
+    transition: opacity 0.35s ease;
 }
 
 .card-special .card-number {
@@ -191,6 +192,14 @@ body {
 
 .card.locked {
     cursor: not-allowed;
+}
+
+.card.flipped .card-number {
+    opacity: 0;
+}
+
+.card.opening .card-number {
+    opacity: 1;
 }
 
 .card.opening .card-inner {

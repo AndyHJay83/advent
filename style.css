@@ -162,15 +162,6 @@ body {
     border-color: rgba(255, 255, 255, 0.12);
 }
 
-.card-back-text {
-    font-family: 'Inter', sans-serif;
-    font-size: clamp(1.1rem, 3vw, 1.6rem);
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    font-weight: 600;
-    text-align: center;
-}
-
 .card-number {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
@@ -194,14 +185,6 @@ body {
     filter: grayscale(0.12) saturate(0.8);
     box-shadow: none;
     border: 2px solid rgba(17, 17, 17, 0.08);
-}
-
-.card.locked .card-front::after {
-    content: '\1F512';
-    position: absolute;
-    font-size: clamp(2.4rem, 6vw, 3.2rem);
-    color: rgba(255, 255, 255, 0.425);
-    transform: translateY(0.2rem);
 }
 
 .card.locked {

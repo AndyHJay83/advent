@@ -94,7 +94,8 @@ const adventContent = {
     },
     24: {
         title: "Day 24: The Final Mystery",
-        content: "<p>Congratulations, seeker. You have journeyed through all the mysteries of The Magician's Desk. The greatest secret of all is this: you were the magic all along.</p><blockquote>'The real voyage of discovery consists not in seeking new landscapes, but in having new eyes.'</blockquote><p>May your days be filled with wonder, your nights with dreams, and your heart with the magic that was always yours.</p>"
+        type: "youtube",
+        videoId: "qffoCxD_BvY"
     },
     25: {
         title: "Christmas Day: The Greatest Gift",
@@ -104,7 +105,7 @@ const adventContent = {
 
 const TOTAL_DAYS = 25;
 const OPENED_STORAGE_KEY = 'magiciansDeskOpened_v3';
-const FORCE_UNLOCK_DAYS = new Set();
+const FORCE_UNLOCK_DAYS = new Set([24]);
 
 const countdownContainer = document.getElementById('countdownContainer');
 const countdownText = document.getElementById('countdownText');

@@ -289,7 +289,6 @@ function createCard(day) {
 
     if (opened) {
         card.classList.add('flipped');
-        clearFrontNumber(card);
     }
 
     card.addEventListener('click', () => {
@@ -309,20 +308,12 @@ function openCard(card, day) {
     }
 
     card.classList.add('flipped');
-    clearFrontNumber(card);
     saveOpenedCard(day);
 
     setTimeout(() => {
         showModal(day);
         updateCountdown();
     }, 450);
-}
-
-function clearFrontNumber(card) {
-    const frontNumber = card.querySelector('.card-number');
-    if (frontNumber && frontNumber.textContent.trim() !== '') {
-        frontNumber.textContent = '';
-    }
 }
 
 // Modal handling

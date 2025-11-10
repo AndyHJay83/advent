@@ -139,16 +139,6 @@ body {
     -webkit-transform: rotateY(180deg);
 }
 
-.card.flipped .card-front {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.card.opening .card-front {
-    opacity: 1;
-    visibility: visible;
-}
-
 .card-front,
 .card-back {
     position: absolute;
@@ -182,6 +172,11 @@ body {
     font-weight: 700;
     letter-spacing: 0.05em;
     font-size: clamp(2.5rem, 5vw, 3.5rem);
+    transition: opacity 0.35s ease;
+}
+
+.card.flipped .card-number {
+    opacity: 0;
 }
 
 .card-special .card-number {

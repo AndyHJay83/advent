@@ -93,7 +93,7 @@ const adventContent = {
         content: "<p>Anticipation fills the air. Tomorrow holds something special, something magical, something transformative.</p><blockquote>'Hope is being able to see that there is light despite all of the darkness.'</blockquote>"
     },
     24: {
-        title: "Day 24: The Final Mystery",
+        title: "Dec 24: The Old Episode",
         type: "youtube",
         videoId: "qffoCxD_BvY"
     },
@@ -104,8 +104,8 @@ const adventContent = {
 };
 
 const TOTAL_DAYS = 25;
-const OPENED_STORAGE_KEY = 'magiciansDeskOpened_v3';
-const FORCE_UNLOCK_DAYS = new Set([24]);
+const OPENED_STORAGE_KEY = 'magiciansDeskOpened_v4';
+const FORCE_UNLOCK_DAYS = new Set();
 
 const countdownContainer = document.getElementById('countdownContainer');
 const countdownText = document.getElementById('countdownText');

@@ -105,7 +105,7 @@ const adventContent = {
 
 const TOTAL_DAYS = 25;
 const OPENED_STORAGE_KEY = 'magiciansDeskOpened_v4';
-const FORCE_UNLOCK_DAYS = new Set([2]);
+const FORCE_UNLOCK_DAYS = new Set();
 
 const countdownContainer = document.getElementById('countdownContainer');
 const countdownText = document.getElementById('countdownText');

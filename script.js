@@ -53,8 +53,8 @@ const adventContent = {
         content: "<p>I found this video that I took on my bedroom floor 10 years ago. I watched it, tongue in cheek, thinking I'll look back on those days and wonder how I've come so far. As I sat back, expecting to watch little Andy fumble and stumble and be generally awful, I buckled in for a ride. Anyway, I fooled myself for a bit. Enjoy!</p><div class=\"modal-video\"><iframe src=\"https://www.youtube.com/embed/ey8k_HEyzOU\" title=\"Day 13 reveal\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe></div>"
     },
     14: {
-        title: "Day 14: The Enchanted Hour",
-        content: "<p>There are moments when time stands still, when the impossible becomes possible, when magic happens.</p><blockquote>'Time is a created thing. To say \"I don't have time\" is to say \"I don't want to.\"'</blockquote>"
+        title: "YES/NO",
+        content: "<p>Every year, I try to do an advent calendar just to my personal following. I've never made it through the whole of December, except one year. This is one of my favourite effects from it. Do you want to learn it? Coming January.</p><div class=\"modal-video\"><iframe src=\"https://www.youtube.com/embed/VA1bK8T5QFE\" title=\"Day 14 reveal\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe></div>"
     },
     15: {
         title: "Day 15: The Gathering",

@@ -57,12 +57,12 @@ const adventContent = {
         content: "<p>Every year, I try to do an advent calendar just to my personal following. I've never made it through the whole of December, except one year. This is one of my favourite effects from it. Do you want to learn it? Coming January.</p><div class=\"modal-video\"><iframe src=\"https://www.youtube.com/embed/VA1bK8T5QFE\" title=\"Day 14 reveal\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe></div>"
     },
     15: {
-        title: "Day 15: The Gathering",
-        content: "<p>As we approach the heart of December, energies converge. Something wonderful is building.</p><blockquote>'Alone we can do so little; together we can do so much.'</blockquote>"
+        title: "Fantastical Four Aces",
+        content: "<p>There's something about a \"spectator cuts the aces\" routine that I love. In fact, I started my close up show with a three phase routine like this.</p><p>I saw the handling originally from Ollie Mealing, but this is 8 years old and I would change everything about it if I could.</p><p>Enjoy!</p><div class=\"modal-video\"><iframe src=\"https://www.youtube.com/embed/424od1Dq28c\" title=\"Day 15 reveal\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe></div>"
     },
     16: {
-        title: "Day 16: Ancient Echoes",
-        content: "<p>The whispers of the past carry forward, their messages timeless and true.</p><blockquote>'Those who cannot remember the past are condemned to repeat it.'</blockquote>"
+        title: "Going Home",
+        content: "<p>I came across a very intriguing routine. I had never heard of the premise before, so took a chance on it and boy, it did not disappoint. A little bit of a setup, but absolutely frying.</p><p>You should know that I almost exclusively don't perform to magicians. On the rare occassion that I do, I try not to have it on film. Some slip through the cracks. Here's me performing to Ollie Mealing on the same day as his short performance montage \"The Kicker\". It's a great video of performances you would absolutely benefit from. Search \"Ollie Mealing Kicker\" and you'll find it on YouTube.</p><p>But for now, here is an effect called \"Going Home\" by the incredible Carl Irwin.</p><div class=\"modal-video\"><iframe src=\"https://www.youtube.com/embed/p02AuiuQlWc\" title=\"Day 16 reveal\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe></div>"
     },
     17: {
         title: "Day 17: The Great Awakening",

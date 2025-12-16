@@ -65,8 +65,8 @@ const adventContent = {
         content: "<p>I came across a very intriguing routine. I had never heard of the premise before, so took a chance on it and boy, it did not disappoint. A little bit of a setup, but absolutely frying.</p><p>You should know that I almost exclusively don't perform to magicians. On the rare occassion that I do, I try not to have it on film. Some slip through the cracks. Here's me performing to Ollie Mealing on the same day as his short performance montage \"The Kicker\". It's a great video of performances you would absolutely benefit from. Search \"Ollie Mealing Kicker\" and you'll find it on YouTube.</p><p>But for now, here is an effect called \"Going Home\" by the incredible Carl Irwin.</p><div class=\"modal-video\"><iframe src=\"https://www.youtube.com/embed/p02AuiuQlWc\" title=\"Day 16 reveal\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe></div>"
     },
     17: {
-        title: "Day 17: The Great Awakening",
-        content: "<p>With each passing day, you awaken more fully to your own potential. The transformation has begun.</p><blockquote>'You have been assigned this mountain to show others it can be moved.'</blockquote>"
+        title: "Pareidolia",
+        content: "<p>Part of one of many failed Advent calendar attempts. This one was always a dream of mine to do. I made a bunch of routines and basically did this on a bunch of people every day for December. It was a huge learning opportunity for me, seeing a totally new challenge ahead and trying to overcome it.</p><p>This one specifically was satisfying. No pre-show, no stooging. You know how it's done.</p><div class=\"modal-video\"><iframe src=\"https://www.youtube.com/embed/meqdigoAlIw\" title=\"Day 17 reveal\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe></div>"
     },
     18: {
         title: "Day 18: The Final Stretch",

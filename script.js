@@ -69,8 +69,8 @@ const adventContent = {
         content: "<p>Part of one of many failed Advent calendar attempts. This one was always a dream of mine to do. I made a bunch of routines and basically did this on a bunch of people every day for December. It was a huge learning opportunity for me, seeing a totally new challenge ahead and trying to overcome it.</p><p>This one specifically was satisfying. No pre-show, no stooging. You know how it's done.</p><div class=\"modal-video\"><iframe src=\"https://www.youtube.com/embed/meqdigoAlIw\" title=\"Day 17 reveal\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe></div>"
     },
     18: {
-        title: "Day 18: The Final Stretch",
-        content: "<p>We near the culmination of our journey. The mysteries deepen, the magic intensifies.</p><blockquote>'The journey of a thousand miles begins with one step.'</blockquote>"
+        title: "Serendipity",
+        content: "<p>I love this effect. It was one of the first videos of Ollie's that I saw, and I fell in love. I hadn't seen something so presentationally unique like this in forever, and it sparked something about story telling, and open ended-ness, and drove me into magic psychology obsession.</p><p>It's crazy looking at this and remembering what it made me feel, considering I then went on to work closesly with Ollie through his projects. Without this one effect, my life would honestly be totally different to what it is today.</p><div class=\"modal-video\"><iframe src=\"https://www.youtube.com/embed/aTpUl9NZ5Ys\" title=\"Day 18 reveal\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe></div>"
     },
     19: {
         title: "Day 19: Convergence",

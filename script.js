@@ -73,8 +73,8 @@ const adventContent = {
         content: "<p>I love this effect. It was one of the first videos of Ollie's that I saw, and I fell in love. I hadn't seen something so presentationally unique like this in forever, and it sparked something about story telling, and open ended-ness, and drove me into magic psychology obsession.</p><p>It's crazy looking at this and remembering what it made me feel, considering I then went on to work closesly with Ollie through his projects. Without this one effect, my life would honestly be totally different to what it is today.</p><div class=\"modal-video\"><iframe src=\"https://www.youtube.com/embed/aTpUl9NZ5Ys\" title=\"Day 18 reveal\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe></div>"
     },
     19: {
-        title: "Day 19: Convergence",
-        content: "<p>All paths begin to converge. What seemed separate is revealed as one great tapestry.</p><blockquote>'Everything is connected. No one thing can change by itself.'</blockquote>"
+        title: "Haystack",
+        content: "<p>Patrick Redford is one of my biggest inspirations in card magic. He opened my eyes to creating structure as a whole, as well as some incredibly creative stack work. His work formed most of my newest show, and has been a constant creative force for me in magic.</p><p>Here is his effect Haystack from his book Cardboard:</p><div class=\"modal-video\"><iframe src=\"https://www.youtube.com/embed/dZqK3VLbOzM\" title=\"Day 19 reveal\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe></div>"
     },
     20: {
         title: "Day 20: The Revelation",

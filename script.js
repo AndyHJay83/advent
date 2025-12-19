@@ -77,8 +77,8 @@ const adventContent = {
         content: "<p>Patrick Redford is one of my biggest inspirations in card magic. He opened my eyes to creating structure as a whole, as well as some incredibly creative stack work. His work formed most of my newest show, and has been a constant creative force for me in magic.</p><p>Here is his effect Haystack from his book Cardboard:</p><div class=\"modal-video\"><iframe src=\"https://www.youtube.com/embed/dZqK3VLbOzM\" title=\"Day 19 reveal\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe></div>"
     },
     20: {
-        title: "Day 20: The Revelation",
-        content: "<p>Great truths reveal themselves to those who are ready to receive them. Are you ready?</p><blockquote>'The truth will set you free, but first it will piss you off.'</blockquote>"
+        title: "Giancarlo Scalia",
+        content: "<p>I will let the video speak for itself. This effect was also in my close up show \"Tricks I Stole\", and is my go-to triumph now. It's ridiculous, chaotic, and so fun to do.</p><div class=\"modal-video\"><iframe src=\"https://www.youtube.com/embed/okOTngSHu1k\" title=\"Day 20 reveal\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe></div>"
     },
     21: {
         title: "Day 21: The Solstice",

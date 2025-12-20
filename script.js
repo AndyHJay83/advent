@@ -81,8 +81,10 @@ const adventContent = {
         content: "<p>I will let the video speak for itself. This effect was also in my close up show \"Tricks I Stole\", and is my go-to triumph now. It's ridiculous, chaotic, and so fun to do.</p><div class=\"modal-video\"><iframe src=\"https://www.youtube.com/embed/okOTngSHu1k\" title=\"Day 20 reveal\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe></div>"
     },
     21: {
-        title: "Day 21: The Solstice",
-        content: "<p>On the longest night, the deepest magic stirs. From darkness comes light, from winter comes spring.</p><blockquote>'In the depth of winter, I finally learned that within me there lay an invincible summer.'</blockquote>"
+        title: "£1.50 Billet Box",
+        content: "<p>I put together a quick video running through the build of the £1.50 Billet Box. Helpful if you have the edition in front of you. We're on the final stretch!</p>",
+        type: "youtube",
+        videoId: "nna06zncWgU"
     },
     22: {
         title: "Day 22: Almost There",

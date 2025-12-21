@@ -87,8 +87,10 @@ const adventContent = {
         videoId: "nna06zncWgU"
     },
     22: {
-        title: "Day 22: Almost There",
-        content: "<p>The final mysteries are near. Hold fast, for the greatest revelations are yet to come.</p><blockquote>'It is during our darkest moments that we must focus to see the light.'</blockquote>"
+        title: "These Tricks Will Fool You",
+        content: "<p>One of the most fooled I have ever been was from a trick called \"Stopwatch\" by Ollie Mealing. A few iterations have come out since, including one recently from our good friends over at The Daily Magician. They also sat with Ollie Mealing and showed him 3 effects that you can learn right now. To see the FULL performances, watch below!</p>",
+        type: "youtube",
+        videoId: "xeoyaUHpASQ"
     },
     23: {
         title: "Day 23: The Eve of Eves",

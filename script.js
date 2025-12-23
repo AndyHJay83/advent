@@ -93,8 +93,10 @@ const adventContent = {
         videoId: "xeoyaUHpASQ"
     },
     23: {
-        title: "Day 23: The Eve of Eves",
-        content: "<p>Anticipation fills the air. Tomorrow holds something special, something magical, something transformative.</p><blockquote>'Hope is being able to see that there is light despite all of the darkness.'</blockquote>"
+        title: "The Circle ACAAN",
+        content: "<p>This is me just doing an impromptu version of Christian Grace's \"The Circle\". You can find this on his membership \"Magic Monthly\" here - <a href=\"https://www.magicmonthly.store\" target=\"_blank\" rel=\"noopener\">www.magicmonthly.store</a></p><p>Excuse the terrible performance, this was my first time trying it with my fake-father.</p>",
+        type: "youtube",
+        videoId: "ysdTtpTk914"
     },
     24: {
         title: "Dec 24: The Old Episode",

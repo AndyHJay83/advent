@@ -99,13 +99,16 @@ const adventContent = {
         videoId: "ysdTtpTk914"
     },
     24: {
-        title: "Dec 24: The Old Episode",
+        title: "Paradise Project",
+        content: "<p>I added this feature into the November App, as an ACAAN solution inspired by Ollie Mealing's \"Paradise Project\".</p><p>Grab a deck of cards and your phone, and let's go!</p>",
         type: "youtube",
-        videoId: "qffoCxD_BvY"
+        videoId: "gjLz8vj2zds"
     },
     25: {
-        title: "Christmas Day: The Greatest Gift",
-        content: "<p>🎄 Merry Christmas! 🎄</p><p>On this special day, may the magic you've discovered throughout December fill your heart and home with joy, love, and wonder.</p><blockquote>'The best gift is a portion of thyself.'</blockquote><p>Thank you for joining The Magician's Desk this December. May your Christmas be magical in every way.</p><p>✨ With love and magic ✨</p>"
+        title: "The Episode",
+        content: "<p>🎄 Merry Christmas!! 🎄</p><p>I did a little episode when lockdown started to try and bring some kind of entertainment into my family and friends living rooms. Excuse the bad audio in parts, this was literally thrown together the morning after lockdown in the UK.</p><p>Hopefully it can bring a bit of entertainment to you this Christmas.</p><p>Enjoy!</p>",
+        type: "youtube",
+        videoId: "qffoCxD_BvY"
     }
 };
 
